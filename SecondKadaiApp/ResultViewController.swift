@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ResultViewController.swift
 //  SecondKadaiApp
 //
 //  Created by Akio Chikai on 2016/04/08.
@@ -8,27 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ResultViewController: UIViewController {
 
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var label: UILabel!
+    var text: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        label.text = "こんにちは、\(text!)さん"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let resultViewController:ResultViewController = segue.destinationViewController as! ResultViewController
-        resultViewController.text = textField.text
-    }
-    
-    @IBAction func unwind(segue: UIStoryboardSegue) {
-        
-    }
 }
-
